@@ -1,0 +1,105 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 1200px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.workspace-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.workspace,
+.output {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+#blocklyDiv {
+  width: 100%;
+  height: 400px;
+  margin-top: 10px;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  gap: 5px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1 / 1;
+  background-color: #e0e0e0;
+  border: 2px solid #888;
+  border-radius: 8px;
+}
+
+.grid div {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+}
+
+.car {
+  width: 12.5%;
+  height: 12.5%;
+  position: absolute;
+  left: 87.5%;
+  top: 87.5%;
+  transition: transform 0.3s ease, left 0.3s, top 0.3s;
+  z-index: 10;
+}
+
+#status {
+  font-size: 18px;
+  color: green;
+  font-weight: bold;
+}
+
+button.run-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 300px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.log-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.log-table th,
+.log-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}

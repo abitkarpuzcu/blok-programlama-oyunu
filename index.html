@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blok Programlama Oyunu</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="theme-color" content="#4CAF50" />
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/serviceWorker.js").then(
+          (reg) => console.log("Service Worker kayıt edildi:", reg.scope),
+          (err) => console.error("Service Worker kayıt hatası:", err)
+        );
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="game-container">
+    <div class="workspace-container">
+      <div class="workspace" id="workspace">
+        <h2>Programlama Alanı</h2>
+        <p>Blokları buraya sürükleyin</p>
+        <div id="blocklyDiv"></div>
+        <button class="run-button" id="runCode">Kodu Çalıştır</button>
+      </div>
+
+      <div class="output">
+        <h2>Çıktı</h2>
+        <div id="status"></div>
+        <div id="grid" class="grid">
+          <img id="car" class="car" src="gsbmw.jpg" alt="Araba" />
+        </div>
+        <table class="log-table" id="logTable">
+          <thead>
+            <tr>
+              <th>Adım</th>
+              <th>Hareket</th>
+              <th>Mesafe</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="blockly/blockly_compressed.js"></script>
+  <script src="blockly/blocks_compressed.js"></script>
+  <script src="blockly/javascript_compressed.js"></script>
+  <script src="blockly/msg/tr.js"></script>
+  <script src="script31.js" defer></script>
+</body>
+</html>
